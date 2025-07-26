@@ -72,7 +72,7 @@ export default function InternshipsPage() {
   }
 
   try {
-    const res = await fetch("http://localhost:8000/api/submit-bootcamp", {
+    const res = await fetch("https://shadowfox-website-personal-backend.onrender.com/api/submit-bootcamp", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(formData),
