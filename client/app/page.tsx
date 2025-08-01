@@ -369,16 +369,8 @@ export default function LandingPage() {
               <h3 className="text-2xl font-black mb-6 text-purple-400">Support</h3>
               <ul className="space-y-3 text-gray-300">
                 <li>
-                  <a
-                    href="/faq"
-                    className="text-lg font-medium hover:text-purple-400 transition-colors duration-300"
-                  >
-                    FAQ
-                  </a>
-                </li>
-                <li>
                   <Link
-                    href="/privacy"
+                    href="/privacypolicy"
                     className="text-lg font-medium hover:text-purple-400 transition-colors duration-300"
                   >
                     Privacy Policy
@@ -386,7 +378,7 @@ export default function LandingPage() {
                 </li>
                 <li>
                   <Link
-                    href="/terms"
+                    href="/t&c"
                     className="text-lg font-medium hover:text-purple-400 transition-colors duration-300"
                   >
                     Terms & Conditions

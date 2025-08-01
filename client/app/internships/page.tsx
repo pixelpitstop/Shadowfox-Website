@@ -12,7 +12,9 @@ import { Checkbox } from "@/components/ui/checkbox"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Star } from "lucide-react"
 
+
 export default function InternshipsPage() {
+  const partners = ["Amritha.jpg", "Chandigarh.png", "Parul.png", "SRMR.png"];
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -574,16 +576,16 @@ export default function InternshipsPage() {
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-12">Our Educational Networking</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[1, 2, 3, 4].map((i) => (
+            {partners.map((img, i) => (
               <div
                 key={i}
                 className="bg-gray-800/50 p-6 rounded-xl border border-purple-500/20 flex items-center justify-center"
               >
                 <Image
-                  src="/placeholder.svg?height=80&width=120"
-                  alt={`Partner ${i}`}
+                  src={`/public/${img}`} // ✅ Make sure these images exist inside /public/assets/
+                  alt={`Partner ${i + 1}`}
                   width={120}
-                  height={80}
+                  height={150}
                   className="opacity-70"
                 />
               </div>
@@ -592,6 +594,7 @@ export default function InternshipsPage() {
         </div>
       </section>
 
+
       {/* FAQ Section */}
       <section className="px-6 py-20">
         <div className="max-w-4xl mx-auto">
@@ -599,21 +602,34 @@ export default function InternshipsPage() {
           <div className="space-y-6">
             {[
               {
-                q: "What services do you offer?",
-                a: "We offer web development, UI/UX design, and comprehensive internship programs.",
+                q: " Why might ShadowFox be your choice among various alternatives?",
+                a: "Choose ShadowFox for a holistic learning experience. Our industry-focused curriculum, led by experienced instructors, ensures you gain practical skills. With hands-on projects, flexible learning, and a supportive community, we go beyond traditional education.",
               },
               {
-                q: "How long does it take to build a website?",
-                a: "Typically 2-8 weeks depending on complexity and requirements.",
+                q: "How to apply for ShadowFox Virtual Internship Program?",
+                a: "To apply for a ShadowFox Virtual Internship Program, fill out the interest form on the internship page by choosing your domain.",
               },
               {
-                q: "Do you provide hosting/domain registration?",
-                a: "Yes, we provide complete hosting solutions and domain registration services.",
+                q: "What is ShadowFox VIP and how long is the program?",
+                a: "ShadowFox VIP - Stands for ShadowFox Virtual Internship Program and is a 1 month program",
               },
               {
-                q: "How do I get a quote?",
-                a: "Contact us through our website or email with your project details for a free quote.",
+                q: "Is this internship free?",
+                a: "Yes, ShadowFox VIP is a completely free internship program. However, there is a documentation and delivery fee for each level to receive the swags, although it is not mandatory if you don't need the swags.",
               },
+              {
+                q: "When will I get offer letter after applying?",
+                a: "You can expect to receive a confirmation from our end approximately one week before the commencement of your tenure period.",
+              },
+              {
+                q: "How many levels are there in total?",
+                a: "There are 3 Levels in total, Level - 1(Beginner Tasks),Level - 2(Intermediate tasks) and Level - 3(Advanced tasks/Realtime projects)",
+              },
+              {
+                q: "Do you provide physical certificates?",
+                a: "Yes, we do issue physical certificates for individuals who successfully complete tasks beyond the Level-1(Beginner Level) threshold.",
+              },
+
             ].map((faq, index) => (
               <div key={index} className="bg-gray-800/50 p-6 rounded-xl border border-purple-500/20">
                 <h3 className="font-bold mb-2">{faq.q}</h3>
