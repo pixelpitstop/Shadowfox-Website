@@ -480,7 +480,7 @@ export default function InternshipsPage() {
           <div className="space-y-6">
             {[
               {
-                q:"Why should I choose ShadowFox Bootcamps over other options?"
+                q:"Why should I choose ShadowFox Bootcamps over other options?",
                 a:"ShadowFox Bootcamps offer an immersive, results-driven learning experience. Our programs are led by industry professionals and focus on building practical, real-world skills through projects, mentorship, and interactive sessions. You’ll gain the knowledge and confidence to excel in your chosen field.",
               },
               {
