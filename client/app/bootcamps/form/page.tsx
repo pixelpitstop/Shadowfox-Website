@@ -475,48 +475,51 @@ export default function InternshipsPage() {
       </section>
 
       <section className="px-6 py-20" id="faqs">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold mb-12 text-center">Frequently Asked Questions</h2>
-          <div className="space-y-6">
-            {[
-              {
-                q:"Why should I choose ShadowFox Bootcamps over other options?",
-                a:"ShadowFox Bootcamps offer an immersive, results-driven learning experience. Our programs are led by industry professionals and focus on building practical, real-world skills through projects, mentorship, and interactive sessions. You’ll gain the knowledge and confidence to excel in your chosen field.",
-              },
-              {
-                q: "How can I apply for a ShadowFox Bootcamp?",
-                a: "Simply fill out the registration form on our Bootcamp page, select your preferred domain, and submit the required details. Our team will review your application and contact you with next steps.",
-              },
-              {
-                q: "What is the duration of the Bootcamp?",
-                a: "Each Bootcamp typically runs for 4–6 weeks, depending on the domain and complexity of the curriculum.",
-              },
-              {
-                q: "I: Is there a fee for the Bootcamp?",
-                a: "Yes, our Bootcamps are paid programs with competitive pricing. The fee covers live sessions, learning materials, project guidance, and mentor support. Any optional add-ons or certification fees will be clearly stated during registration.",
-              },
-              {
-                q: "When will I receive confirmation after registering?",
-                a: "You will receive a confirmation email from our team within 3–5 business days after submitting your registration.",
-              },
-              {
-                q: "What topics or levels are covered in the Bootcamp?",
-                a: "Our Bootcamps are designed in multiple modules — from beginner fundamentals to advanced, real-world projects — ensuring you gain a complete skill set by the end of the program.",
-              },
-              {
-                q: "Do I receive a certificate after completing the Bootcamp?",
-                a: "Yes, participants who successfully complete the Bootcamp and its required projects will receive a recognized certificate of completion from ShadowFox.",
-              },
-
-            ].map((faq, index) => (
-              <div key={index} className="bg-gray-800/50 p-6 rounded-xl border border-purple-500/20">
-                <h3 className="font-bold mb-2">{faq.q}</h3>
-                <p className="text-gray-300">{faq.a}</p>
-              </div>
-            ))}
-          </div>
+      <div className="max-w-4xl mx-auto">
+      <h2 className="text-4xl font-bold mb-12 text-center">Frequently Asked Questions</h2>
+      <div className="space-y-6">
+      {[
+        {
+          q: "Why should I choose ShadowFox Bootcamps over other options?",
+          a: "ShadowFox Bootcamps offer an immersive, results-driven learning experience. Our programs are led by industry professionals and focus on building practical, real-world skills through projects, mentorship, and interactive sessions. You will gain the knowledge and confidence to excel in your chosen field.",
+        },
+        {
+          q: "How can I apply for a ShadowFox Bootcamp?",
+          a: "Simply fill out the registration form on our Bootcamp page, select your preferred domain, and submit the required details. Our team will review your application and contact you with next steps.",
+        },
+        {
+          q: "What is the duration of the Bootcamp?",
+          a: "Each Bootcamp typically runs for 4–6 weeks, depending on the domain and complexity of the curriculum.",
+        },
+        {
+          q: "Is there a fee for the Bootcamp?",
+          a: "Yes, our Bootcamps are paid programs with competitive pricing. The fee covers live sessions, learning materials, project guidance, and mentor support. Any optional add-ons or certification fees will be clearly stated during registration.",
+        },
+        {
+          q: "When will I receive confirmation after registering?",
+          a: "You will receive a confirmation email from our team within 3–5 business days after submitting your registration.",
+        },
+        {
+          q: "What topics or levels are covered in the Bootcamp?",
+          a: "Our Bootcamps are designed in multiple modules — from beginner fundamentals to advanced, real-world projects — ensuring you gain a complete skill set by the end of the program.",
+        },
+        {
+          q: "Do I receive a certificate after completing the Bootcamp?",
+          a: "Yes, participants who successfully complete the Bootcamp and its required projects will receive a recognized certificate of completion from ShadowFox.",
+        },
+      ].map((faq, index) => (
+        <div
+          key={index}
+          className="bg-gray-800/50 p-6 rounded-xl border border-purple-500/20"
+        >
+          <h3 className="font-bold mb-2">{faq.q}</h3>
+          <p className="text-gray-300">{faq.a}</p>
         </div>
+      ))}
+      </div>
+      </div>
       </section>
+
 
       {/* Footer */}
       <footer className="border-t border-purple-500/20 px-6 py-12">
