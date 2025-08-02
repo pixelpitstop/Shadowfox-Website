@@ -130,20 +130,6 @@ export default function InternshipsPage() {
         <Link href="/" className="text-2xl font-bold text-purple-400">
           Shadowfox.
         </Link>
-        <div className="hidden md:flex items-center space-x-8">
-          <Link href="/" className="hover:text-purple-400 transition-colors">
-            Home
-          </Link>
-          <Link href="/why-us" className="hover:text-purple-400 transition-colors">
-            Why Us
-          </Link>
-          <Link href="/testimonials" className="hover:text-purple-400 transition-colors">
-            Testimonials
-          </Link>
-          <Link href="/faqs" className="hover:text-purple-400 transition-colors">
-            FAQ's
-          </Link>
-        </div>
       </nav>
 
       {/* Hero Section */}
@@ -266,7 +252,7 @@ export default function InternshipsPage() {
                   value={formData.email}
                   onChange={(e) => handleInputChange("email", e.target.value)}
                   className="bg-gray-700/50 border-purple-500/30"
-                  required // Added required attribute
+                  required 
                 />
               </div>
             </div>
@@ -278,7 +264,7 @@ export default function InternshipsPage() {
                   value={formData.phone}
                   onChange={(e) => handleInputChange("phone", e.target.value)}
                   className="bg-gray-700/50 border-purple-500/30"
-                  required // Added required attribute
+                  required 
                 />
               </div>
               <div>
@@ -287,7 +273,7 @@ export default function InternshipsPage() {
                   value={formData.school}
                   onChange={(e) => handleInputChange("school", e.target.value)}
                   className="bg-gray-700/50 border-purple-500/30"
-                  required // Added required attribute
+                  required 
                 />
               </div>
             </div>
@@ -314,7 +300,7 @@ export default function InternshipsPage() {
                   value={formData.fieldOfStudy}
                   onChange={(e) => handleInputChange("fieldOfStudy", e.target.value)}
                   className="bg-gray-700/50 border-purple-500/30"
-                  required // Added required attribute
+                  required 
                 />
               </div>
             </div>
@@ -326,7 +312,7 @@ export default function InternshipsPage() {
                 onChange={(e) => handleInputChange("address", e.target.value)}
                 className="bg-gray-700/50 border-purple-500/30"
                 rows={3}
-                required // Added required attribute
+                required
               />
             </div>
 
@@ -480,7 +466,7 @@ export default function InternshipsPage() {
             <Button
               type="submit"
               className="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 text-lg transition-all duration-300 transform hover:scale-105"
-              disabled={isSubmitting} // Disable button during submission
+              disabled={isSubmitting} 
             >
               {isSubmitting ? 'Submitting...' : 'Submit Application'}
             </Button>
@@ -488,80 +474,40 @@ export default function InternshipsPage() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="px-6 py-20">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold mb-12 text-center">What Our Interns Say</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="bg-gray-800/50 p-6 rounded-2xl border border-purple-500/20">
-                <div className="flex mb-4">
-                  {[...Array(5)].map((_, j) => (
-                    <Star key={j} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                  ))}
-                </div>
-                <p className="text-gray-300 mb-4">
-                  "Amazing experience! I learned so much and worked on real projects that I can showcase in my
-                  portfolio."
-                </p>
-                <div className="flex items-center">
-                  <div className="w-10 h-10 bg-purple-600 rounded-full mr-3"></div>
-                  <div>
-                    <p className="font-medium">Student Name</p>
-                    <p className="text-sm text-gray-400">College Name</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Educational Partners */}
-      <section className="px-6 py-20">
-        <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-12">Our Educational Networking</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[1, 2, 3, 4].map((i) => (
-              <div
-                key={i}
-                className="bg-gray-800/50 p-6 rounded-xl border border-purple-500/20 flex items-center justify-center"
-              >
-                <Image
-                  src="/placeholder.svg?height=80&width=120"
-                  alt={`Partner ${i}`}
-                  width={120}
-                  height={80}
-                  className="opacity-70"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="px-6 py-20">
+      <section className="px-6 py-20" id="faqs">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-bold mb-12 text-center">Frequently Asked Questions</h2>
           <div className="space-y-6">
             {[
               {
-                q: "What services do you offer?",
-                a: "We offer web development, UI/UX design, and comprehensive internship programs.",
+                q:"Why should I choose ShadowFox Bootcamps over other options?"
+                a:"ShadowFox Bootcamps offer an immersive, results-driven learning experience. Our programs are led by industry professionals and focus on building practical, real-world skills through projects, mentorship, and interactive sessions. You’ll gain the knowledge and confidence to excel in your chosen field.",
               },
               {
-                q: "How long does it take to build a website?",
-                a: "Typically 2-8 weeks depending on complexity and requirements.",
+                q: "How can I apply for a ShadowFox Bootcamp?",
+                a: "Simply fill out the registration form on our Bootcamp page, select your preferred domain, and submit the required details. Our team will review your application and contact you with next steps.",
               },
               {
-                q: "Do you provide hosting/domain registration?",
-                a: "Yes, we provide complete hosting solutions and domain registration services.",
+                q: "What is the duration of the Bootcamp?",
+                a: "Each Bootcamp typically runs for 4–6 weeks, depending on the domain and complexity of the curriculum.",
               },
               {
-                q: "How do I get a quote?",
-                a: "Contact us through our website or email with your project details for a free quote.",
+                q: "I: Is there a fee for the Bootcamp?",
+                a: "Yes, our Bootcamps are paid programs with competitive pricing. The fee covers live sessions, learning materials, project guidance, and mentor support. Any optional add-ons or certification fees will be clearly stated during registration.",
               },
+              {
+                q: "When will I receive confirmation after registering?",
+                a: "You will receive a confirmation email from our team within 3–5 business days after submitting your registration.",
+              },
+              {
+                q: "What topics or levels are covered in the Bootcamp?",
+                a: "Our Bootcamps are designed in multiple modules — from beginner fundamentals to advanced, real-world projects — ensuring you gain a complete skill set by the end of the program.",
+              },
+              {
+                q: "Do I receive a certificate after completing the Bootcamp?",
+                a: "Yes, participants who successfully complete the Bootcamp and its required projects will receive a recognized certificate of completion from ShadowFox.",
+              },
+
             ].map((faq, index) => (
               <div key={index} className="bg-gray-800/50 p-6 rounded-xl border border-purple-500/20">
                 <h3 className="font-bold mb-2">{faq.q}</h3>

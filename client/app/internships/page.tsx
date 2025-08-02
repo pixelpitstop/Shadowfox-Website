@@ -161,13 +161,10 @@ export default function InternshipsPage() {
           <Link href="/" className="hover:text-purple-400 transition-colors">
             Home
           </Link>
-          <Link href="/why-us" className="hover:text-purple-400 transition-colors">
-            Why Us
-          </Link>
-          <Link href="/testimonials" className="hover:text-purple-400 transition-colors">
+          <Link href="#testimonials" className="hover:text-purple-400 transition-colors">
             Testimonials
           </Link>
-          <Link href="/faqs" className="hover:text-purple-400 transition-colors">
+          <Link href="#faqs" className="hover:text-purple-400 transition-colors">
             FAQ's
           </Link>
         </div>
@@ -543,7 +540,7 @@ export default function InternshipsPage() {
 
 <section className="px-6 py-20">
   <div className="max-w-7xl mx-auto">
-    <h2 className="text-4xl font-bold mb-12 text-center">What Our Interns Say</h2>
+    <h2 className="text-4xl font-bold mb-12 text-center" id="testimonials">What Our Interns Say</h2>
     <div className="grid md:grid-cols-3 gap-8">
       {interns.map((interns, index) => (
         <div key={index} className="bg-gray-800/50 p-6 rounded-2xl border border-purple-500/20">
@@ -605,7 +602,7 @@ export default function InternshipsPage() {
 
 
 
-      <section className="px-6 py-20">
+      <section className="px-6 py-20" id="faqs">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-bold mb-12 text-center">Frequently Asked Questions</h2>
           <div className="space-y-6">
@@ -702,11 +699,8 @@ export default function InternshipsPage() {
               </div>
             </div>
           </div>
-          <div className="border-t border-purple-500/20 mt-12 pt-8 flex justify-between items-center">
+          <div className="border-t border-purple-500/20 mt-12 pt-8 flex justify-center">
             <p className="text-gray-400">© 2025 All Reserved By ShadowFox</p>
-            <Link href="https://www.linkedin.com/company/shadowfoxinfo/" className="text-purple-400 hover:text-purple-300">
-              LinkedIn
-            </Link>
           </div>
         </div>
       </footer>

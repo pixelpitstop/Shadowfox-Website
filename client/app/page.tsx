@@ -423,14 +423,8 @@ export default function LandingPage() {
               </div>
             </div>
           </div>
-          <div className="border-t border-purple-500/20 mt-16 pt-10 flex justify-between items-center">
-            <p className="text-gray-400 text-lg font-medium">© 2025 All Reserved By ShadowFox</p>
-            <Link
-              href="#"
-              className="text-purple-400 hover:text-purple-300 text-lg font-medium transition-colors duration-300"
-            >
-              LinkedIn
-            </Link>
+          <div className="border-t border-purple-500/20 mt-16 pt-10 flex justify-center">
+            <p className="text-gray-400 text-lg font-medium ">© 2025 All Reserved By ShadowFox</p>
           </div>
         </div>
       </footer>

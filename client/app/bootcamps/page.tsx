@@ -57,17 +57,6 @@ export default function BootcampsPage() {
         <Link href="/" className="text-2xl font-bold text-purple-400">
           Shadowfox.
         </Link>
-        <div className="hidden md:flex items-center space-x-8">
-          <Link href="/" className="hover:text-purple-400 transition-colors">
-            Home
-          </Link>
-          <Link href="/testimonials" className="hover:text-purple-400 transition-colors">
-            Testimonials
-          </Link>
-          <Link href="/faqs" className="hover:text-purple-400 transition-colors">
-            FAQ's
-          </Link>
-        </div>
       </nav>
 
       <section className="px-6 py-20 text-center">
