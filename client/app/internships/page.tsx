@@ -1,4 +1,4 @@
-// components/InternshipsPage.tsx (or wherever your component is located)
+
 "use client"
 
 import { useState } from "react"
@@ -173,7 +173,6 @@ export default function InternshipsPage() {
         </div>
       </nav>
 
-      {/* Hero Section */}
       <section className="px-6 py-20 text-center">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-5xl font-bold mb-6">What we offer?</h1>
@@ -190,7 +189,6 @@ export default function InternshipsPage() {
         </div>
       </section>
 
-      {/* Internship Overview */}
       <section className="px-5 py-5">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold mb-12 text-center">Shadowfox Internship Program</h2>
@@ -271,7 +269,7 @@ export default function InternshipsPage() {
         </div>
       </section>
 
-      {/* Internship Form */}
+
       <section className="px-6 py-20">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-bold mb-12 text-center">Shadowfox - Internship Form</h2>
@@ -284,7 +282,7 @@ export default function InternshipsPage() {
                   value={formData.fullName}
                   onChange={(e) => handleInputChange("fullName", e.target.value)}
                   className="bg-gray-700/50 border-purple-500/30"
-                  required // Added required attribute
+                  required 
                 />
               </div>
               <div>
@@ -294,7 +292,7 @@ export default function InternshipsPage() {
                   value={formData.email}
                   onChange={(e) => handleInputChange("email", e.target.value)}
                   className="bg-gray-700/50 border-purple-500/30"
-                  required // Added required attribute
+                  required 
                 />
               </div>
             </div>
@@ -306,7 +304,7 @@ export default function InternshipsPage() {
                   value={formData.phone}
                   onChange={(e) => handleInputChange("phone", e.target.value)}
                   className="bg-gray-700/50 border-purple-500/30"
-                  required // Added required attribute
+                  required 
                 />
               </div>
               <div>
@@ -315,7 +313,7 @@ export default function InternshipsPage() {
                   value={formData.school}
                   onChange={(e) => handleInputChange("school", e.target.value)}
                   className="bg-gray-700/50 border-purple-500/30"
-                  required // Added required attribute
+                  required 
                 />
               </div>
             </div>
@@ -342,7 +340,7 @@ export default function InternshipsPage() {
                   value={formData.fieldOfStudy}
                   onChange={(e) => handleInputChange("fieldOfStudy", e.target.value)}
                   className="bg-gray-700/50 border-purple-500/30"
-                  required // Added required attribute
+                  required 
                 />
               </div>
             </div>
@@ -354,7 +352,7 @@ export default function InternshipsPage() {
                 onChange={(e) => handleInputChange("address", e.target.value)}
                 className="bg-gray-700/50 border-purple-500/30"
                 rows={3}
-                required // Added required attribute
+                required 
               />
             </div>
 
@@ -448,38 +446,45 @@ export default function InternshipsPage() {
               />
             </div>
           <div>
-          <label className="block text-sm font-medium mb-4">
-            Areas of Interest (Select all that apply)
-          </label>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-             {[
-              "AI/ML",  
-              "Android App Development",
-              "Web Development",
-              "UI/UX Design",
-              "Python Development",
-              "Data Science",
-              "Java Development",
-
-            ].map((interest) => (
-           <div key={interest} className="flex items-center space-x-2">
-              <Checkbox
-               id={interest}
-               checked={formData.interests.includes(interest)}
-               onCheckedChange={(checked) => handleInterestChange(interest, checked as boolean)}
-               />
-             <label htmlFor={interest} className="text-sm">
-                {interest}
-             </label>
-           </div>
-           ))}
-        <div className="flex items-center space-x-2">
-          <a href="https://forms.gle/eHcwDb8aU2UzFJBs9" className="text-sm text-purple-500 hover:underline">
-            Click here for Cybersecurity!
-          </a>
-        </div>
+  <label className="block text-sm font-medium mb-4">
+    Areas of Interest (Select only one)
+  </label>
+  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+    {[
+      "AI/ML",
+      "Android App Development",
+      "Web Development",
+      "UI/UX Design",
+      "Python Development",
+      "Data Science",
+      "Java Development",
+    ].map((interest) => (
+      <div key={interest} className="flex items-center space-x-2">
+        <Checkbox
+          id={interest}
+          checked={formData.interests[0] === interest} 
+          onCheckedChange={(checked) => {
+            setFormData((prev) => ({
+              ...prev,
+              interests: checked ? [interest] : [], 
+            }));
+          }}
+        />
+        <label htmlFor={interest} className="text-sm">
+          {interest}
+        </label>
       </div>
-    </div>
+    ))}
+  </div>
+  <div className="flex items-center space-x-2 mt-4">
+    <a
+      href="https://forms.gle/eHcwDb8aU2UzFJBs9"
+      className="text-sm text-purple-500 hover:underline"
+    >
+      Click here for Cybersecurity!
+      </a>
+      </div>
+      </div>
 
 
             <div>
@@ -527,7 +532,7 @@ export default function InternshipsPage() {
             <Button
               type="submit"
               className="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 text-lg transition-all duration-300 transform hover:scale-105"
-              disabled={isSubmitting} // Disable button during submission
+              disabled={isSubmitting} 
             >
               {isSubmitting ? 'Submitting...' : 'Submit Application'}
             </Button>
@@ -535,7 +540,7 @@ export default function InternshipsPage() {
         </div>
       </section>
 
-      {/* Testimonials */}
+
 <section className="px-6 py-20">
   <div className="max-w-7xl mx-auto">
     <h2 className="text-4xl font-bold mb-12 text-center">What Our Interns Say</h2>
@@ -548,18 +553,18 @@ export default function InternshipsPage() {
             ))}
           </div>
           
-          {/* Testimonial text */}
+
           <p className="text-gray-300 mb-4">
             "{interns.text}"
           </p>
           
-          {/* Student info */}
+
           <div className="flex items-center">
             <div className="w-10 h-10 rounded-full mr-3 overflow-hidden">
               <Image
                 src={interns.image} 
                 alt={`Testimonial from ${interns.name}`}
-                width={40} // Changed width and height for a smaller profile picture
+                width={40} 
                 height={40}
                 className="object-cover w-full h-full"
               />
@@ -575,7 +580,7 @@ export default function InternshipsPage() {
         </div>
       </section>
 
-      {/* Educational Partners */}
+
       <section className="px-6 py-20">
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-12">Our Educational Networking</h2>
@@ -586,7 +591,7 @@ export default function InternshipsPage() {
                 className="bg-gray-200/50 p-6 rounded-xl border border-purple-500/20 flex items-center justify-center"
               > 
                <Image
-                  src={`/${img}`} // ✅ Make sure these images exist inside /public/assets/
+                  src={`/${img}`} 
                   alt={`Partner ${i + 1}`}
                   width={120}
                   height={150}
@@ -599,7 +604,7 @@ export default function InternshipsPage() {
       </section>
 
 
-      {/* FAQ Section */}
+
       <section className="px-6 py-20">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-bold mb-12 text-center">Frequently Asked Questions</h2>
@@ -644,7 +649,6 @@ export default function InternshipsPage() {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="border-t border-purple-500/20 px-6 py-12">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8">

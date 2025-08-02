@@ -53,7 +53,6 @@ export default function BootcampsPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 text-white">
-      {/* Navigation */}
       <nav className="flex items-center justify-between px-6 py-4 border-b border-purple-500/20">
         <Link href="/" className="text-2xl font-bold text-purple-400">
           Shadowfox.
@@ -71,7 +70,6 @@ export default function BootcampsPage() {
         </div>
       </nav>
 
-      {/* Hero Section */}
       <section className="px-6 py-20 text-center">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-5xl font-bold mb-6">
@@ -81,7 +79,6 @@ export default function BootcampsPage() {
         </div>
       </section>
 
-      {/* Bootcamps Grid */}
       <section className="px-6 pb-20">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -94,7 +91,6 @@ export default function BootcampsPage() {
                       : "border-gray-600/30 opacity-60"
                   }`}
                 >
-                  {/* Bootcamp Image */}
                   <div className="h-48 bg-gray-700/30 rounded-xl mb-6 overflow-hidden">
                     <Image
                       src="/Bootcamps.png"
@@ -105,7 +101,7 @@ export default function BootcampsPage() {
                     />
                   </div>
 
-                  {/* Rating */}
+
                   <div className="flex items-center mb-4">
                     <div className="flex mr-3">
                       {[...Array(5)].map((_, i) => (
@@ -122,7 +118,6 @@ export default function BootcampsPage() {
                     <span className="text-sm text-gray-400">{bootcamp.reviews} reviews</span>
                   </div>
 
-                  {/* Instructor */}
                   <div className="flex items-center mb-6">
                     <div className="w-12 h-12 bg-purple-600 rounded-full mr-4"></div>
                     <div>
@@ -179,7 +174,6 @@ export default function BootcampsPage() {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="border-t border-purple-500/20 px-6 py-12">
         <div className="max-w-7xl mx-auto">
           <div className="flex justify-between items-center">
