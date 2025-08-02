@@ -14,7 +14,7 @@ const bootcamps = [
     duration: "10 weeks",
     sessions: 70,
     fee: 4999,
-    instructor: "Mr.Yash Borkar",
+    instructor: "Mr.Dhanush A",
     rating: 4.8,
     reviews: 650,
     enabled: true,
@@ -40,7 +40,7 @@ const bootcamps = [
     duration: "10 weeks",
     sessions: 70,
     fee: 4999,
-    instructor: "Mr Aakash",
+    instructor: "Mr Arun Kumar",
     rating: 4.7,
     reviews: 650,
     enabled: false,
@@ -184,7 +184,7 @@ export default function BootcampsPage() {
         <div className="max-w-7xl mx-auto">
           <div className="flex justify-between items-center">
             <p className="text-gray-400">© 2025 All Reserved By ShadowFox</p>
-            <Link href="#" className="text-purple-400 hover:text-purple-300">
+            <Link href="https://www.linkedin.com/company/shadowfoxinfo/" className="text-purple-400 hover:text-purple-300">
               LinkedIn
             </Link>
           </div>

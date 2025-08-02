@@ -393,6 +393,11 @@ export default function LandingPage() {
                   </Link>
                 </li>
                 <li>
+                  <Link
+                  href="/verify"
+                  className="text-lg font-medium hover:text-purple-400 transition-colors duration-300"> 
+                  Verify
+                  </Link>
                 </li>
                 <li>
                 </li>
@@ -402,7 +407,7 @@ export default function LandingPage() {
               <h3 className="text-2xl font-black mb-6 text-purple-400">Follow Us</h3>
               <div className="flex space-x-4">
                 <Link
-                  href="#"
+                  href="https://www.linkedin.com/company/shadowfoxinfo/"
                   className="text-lg font-medium text-purple-400 hover:text-purple-300 transition-colors duration-300"
                 >
                   LinkedIn

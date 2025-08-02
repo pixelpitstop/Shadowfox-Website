@@ -15,6 +15,26 @@ import { Star } from "lucide-react"
 
 export default function InternshipsPage() {
   const partners = ["Amritha.jpg", "Chandigarh.png", "Parul.png", "SRMR.png"];
+  const interns = [
+  {
+    name: "Bocha Sahith",
+    domain: "Data Science",
+    image: "/Bocha Sahith.png",
+    text: "I had a great time doing an internship while learning an ample amount of things. The mentors are so helpful and have a keen expertise in the domain. Beyond the technical aspects, what made the internship stand out is that the mentors are well spoken and they have an exceptional ability to convey information with clarity and precision.",
+  },
+  {
+    name: "Prarthana R Karanth",
+    domain: "Web Development",
+    image: "Prarthana.jpg", 
+    text: "The ShadowFox Virtual Internship was an amazing experience. Working on real projects like my portfolio, an e-commerce site, and a client website for Tanjore Degree Coffee helped me sharpen my technical and creative skills. Thanks to the guidance from Mr. Aakash and the collaborative environment, I gained hands-on web development experience and the confidence to pursue a career in this field.",
+  },
+  {
+    name: "Rashi Sharma",
+    domain: "Cyber Security",
+    image: "Rashi Sharma.jpg", 
+    text: "My experience was amazing. The tasks assigned were hands-on and really diverse, presenting various unique challenges in various domains of cybersec. The mentors were really supportive and not just that were accessible for providing any guidance we needed. The community of interns was great, making the environment more enriching.",
+  },
+  ];
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -27,12 +47,10 @@ export default function InternshipsPage() {
     cgpa: "",
     linkedin: "",
     howHeard: "",
-    duration: "",
-    startDate: "",
+    referralcode: "",
     firstInternship: "",
     goals: "",
     skills: "",
-    teamwork: "",
     interests: [],
     strengths: "",
     unpaidReason: "",
@@ -112,12 +130,10 @@ export default function InternshipsPage() {
       cgpa: "",
       linkedin: "",
       howHeard: "",
-      duration: "",
-      startDate: "",
+      referralcode: "",
       firstInternship: "",
       goals: "",
       skills: "",
-      teamwork: "",
       interests: [],
       strengths: "",
       unpaidReason: "",
@@ -352,7 +368,7 @@ export default function InternshipsPage() {
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium mb-2">LinkedIn Profile</label>
+                <label className="block text-sm font-medium mb-2">LinkedIn Profile URL</label>
                 <Input
                   value={formData.linkedin}
                   onChange={(e) => handleInputChange("linkedin", e.target.value)}
@@ -362,7 +378,7 @@ export default function InternshipsPage() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium mb-2">Prior Internship or Work Experience</label>
+              <label className="block text-sm font-medium mb-2">Prior Internship or Work Experience (Kindly specify in detail or write NA if you dont have any experience.)</label>
               <Textarea
                 value={formData.experience}
                 onChange={(e) => handleInputChange("experience", e.target.value)}
@@ -370,8 +386,6 @@ export default function InternshipsPage() {
                 rows={3}
               />
             </div>
-
-            <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <label className="block text-sm font-medium mb-2">How did you hear about Shadowfox?</label>
                 <Select onValueChange={(value) => handleInputChange("howHeard", value)} value={formData.howHeard}>
@@ -387,31 +401,15 @@ export default function InternshipsPage() {
                   </SelectContent>
                 </Select>
               </div>
-              <div>
-                <label className="block text-sm font-medium mb-2">Preferred Internship Duration</label>
-                <Select onValueChange={(value) => handleInputChange("duration", value)} value={formData.duration}>
-                  <SelectTrigger className="bg-gray-700/50 border-purple-500/30">
-                    <SelectValue placeholder="Select duration" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="1-month">1 Month</SelectItem>
-                    <SelectItem value="2-months">2 Months</SelectItem>
-                    <SelectItem value="3-months">3 Months</SelectItem>
-                    <SelectItem value="6-months">6 Months</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-            </div>
-
             <div>
-              <label className="block text-sm font-medium mb-2">Preferred Start Date</label>
-              <Input
-                type="date"
-                value={formData.startDate}
-                onChange={(e) => handleInputChange("startDate", e.target.value)}
-                className="bg-gray-700/50 border-purple-500/30"
-              />
-            </div>
+  <label className="block text-sm font-medium mb-2">Referral Code</label>
+  <Input
+    type="text"
+    value={formData.referralcode} 
+    onChange={(e) => handleInputChange("referralcode", e.target.value)} 
+    className="bg-gray-700/50 border-purple-500/30"
+  />
+</div>
 
             <div>
               <label className="block text-sm font-medium mb-2">Is this your first internship?</label>
@@ -449,45 +447,40 @@ export default function InternshipsPage() {
                 rows={3}
               />
             </div>
+          <div>
+          <label className="block text-sm font-medium mb-4">
+            Areas of Interest (Select all that apply)
+          </label>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+             {[
+              "AI/ML",  
+              "Android App Development",
+              "Web Development",
+              "UI/UX Design",
+              "Python Development",
+              "Data Science",
+              "Java Development",
 
-            <div>
-              <label className="block text-sm font-medium mb-2">Teamwork Preference</label>
-              <Select onValueChange={(value) => handleInputChange("teamwork", value)} value={formData.teamwork}>
-                <SelectTrigger className="bg-gray-700/50 border-purple-500/30">
-                  <SelectValue placeholder="Select preference" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="individual">Individual Work</SelectItem>
-                  <SelectItem value="collaborative">Collaborative Work</SelectItem>
-                  <SelectItem value="both">Both</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
+            ].map((interest) => (
+           <div key={interest} className="flex items-center space-x-2">
+              <Checkbox
+               id={interest}
+               checked={formData.interests.includes(interest)}
+               onCheckedChange={(checked) => handleInterestChange(interest, checked as boolean)}
+               />
+             <label htmlFor={interest} className="text-sm">
+                {interest}
+             </label>
+           </div>
+           ))}
+        <div className="flex items-center space-x-2">
+          <a href="https://forms.gle/eHcwDb8aU2UzFJBs9" className="text-sm text-purple-500 hover:underline">
+            Click here for Cybersecurity!
+          </a>
+        </div>
+      </div>
+    </div>
 
-            <div>
-              <label className="block text-sm font-medium mb-4">Areas of Interest (Select all that apply)</label>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                {[
-                  "Data Science",
-                  "Cybersecurity",
-                  "Python",
-                  "Web Development",
-                  "UI/UX Design",
-                  "Mobile Development",
-                ].map((interest) => (
-                  <div key={interest} className="flex items-center space-x-2">
-                    <Checkbox
-                      id={interest}
-                      checked={formData.interests.includes(interest)}
-                      onCheckedChange={(checked) => handleInterestChange(interest, checked as boolean)}
-                    />
-                    <label htmlFor={interest} className="text-sm">
-                      {interest}
-                    </label>
-                  </div>
-                ))}
-              </div>
-            </div>
 
             <div>
               <label className="block text-sm font-medium mb-2">Strengths you bring to this internship</label>
@@ -514,7 +507,7 @@ export default function InternshipsPage() {
                 id="terms"
                 checked={formData.agreeTerms}
                 onCheckedChange={(checked) => handleInputChange("agreeTerms", checked as boolean)}
-                required // Added required attribute
+                required 
               />
               <label htmlFor="terms" className="text-sm">
                 I agree to the terms and conditions and consent to data usage for internship purposes
@@ -543,31 +536,42 @@ export default function InternshipsPage() {
       </section>
 
       {/* Testimonials */}
-      <section className="px-6 py-20">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold mb-12 text-center">What Our Interns Say</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="bg-gray-800/50 p-6 rounded-2xl border border-purple-500/20">
-                <div className="flex mb-4">
-                  {[...Array(5)].map((_, j) => (
-                    <Star key={j} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                  ))}
-                </div>
-                <p className="text-gray-300 mb-4">
-                  "Amazing experience! I learned so much and worked on real projects that I can showcase in my
-                  portfolio."
-                </p>
-                <div className="flex items-center">
-                  <div className="w-10 h-10 bg-purple-600 rounded-full mr-3"></div>
-                  <div>
-                    <p className="font-medium">Student Name</p>
-                    <p className="text-sm text-gray-400">College Name</p>
-                  </div>
-                </div>
-              </div>
+<section className="px-6 py-20">
+  <div className="max-w-7xl mx-auto">
+    <h2 className="text-4xl font-bold mb-12 text-center">What Our Interns Say</h2>
+    <div className="grid md:grid-cols-3 gap-8">
+      {interns.map((interns, index) => (
+        <div key={index} className="bg-gray-800/50 p-6 rounded-2xl border border-purple-500/20">
+          <div className="flex mb-4">
+            {[...Array(5)].map((_, j) => (
+              <Star key={j} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
             ))}
           </div>
+          
+          {/* Testimonial text */}
+          <p className="text-gray-300 mb-4">
+            "{interns.text}"
+          </p>
+          
+          {/* Student info */}
+          <div className="flex items-center">
+            <div className="w-10 h-10 rounded-full mr-3 overflow-hidden">
+              <Image
+                src={interns.image} 
+                alt={`Testimonial from ${interns.name}`}
+                width={40} // Changed width and height for a smaller profile picture
+                height={40}
+                className="object-cover w-full h-full"
+              />
+            </div>
+            <div>
+              <p className="font-medium">{interns.name}</p>
+              <p className="text-sm text-gray-400">{interns.domain}</p>
+            </div>
+          </div>
+        </div>
+        ))}
+        </div>
         </div>
       </section>
 
@@ -579,14 +583,14 @@ export default function InternshipsPage() {
             {partners.map((img, i) => (
               <div
                 key={i}
-                className="bg-gray-800/50 p-6 rounded-xl border border-purple-500/20 flex items-center justify-center"
-              >
-                <Image
-                  src={`/public/${img}`} // ✅ Make sure these images exist inside /public/assets/
+                className="bg-gray-200/50 p-6 rounded-xl border border-purple-500/20 flex items-center justify-center"
+              > 
+               <Image
+                  src={`/${img}`} // ✅ Make sure these images exist inside /public/assets/
                   alt={`Partner ${i + 1}`}
                   width={120}
                   height={150}
-                  className="opacity-70"
+                  className="opacity-100"
                 />
               </div>
             ))}
@@ -690,13 +694,13 @@ export default function InternshipsPage() {
               <div className="space-y-2 text-gray-300">
                 <p>info@shadowfox.in</p>
                 <p>+918095778765</p>
-                <p>8501 3A 13th Main Road, Anna Nagar West, Chennai - 600040.</p>
+                <p> 859J, 3A 13th Main Road, Anna Nagar West, Chennai - 600040.</p>
               </div>
             </div>
           </div>
           <div className="border-t border-purple-500/20 mt-12 pt-8 flex justify-between items-center">
             <p className="text-gray-400">© 2025 All Reserved By ShadowFox</p>
-            <Link href="#" className="text-purple-400 hover:text-purple-300">
+            <Link href="https://www.linkedin.com/company/shadowfoxinfo/" className="text-purple-400 hover:text-purple-300">
               LinkedIn
             </Link>
           </div>
