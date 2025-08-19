@@ -118,12 +118,6 @@ export default function PrivacyPolicyPage() {
       <footer className="border-t border-purple-500/20 px-6 py-16 bg-gradient-to-t from-gray-900 to-transparent">
         <div className="max-w-5xl mx-auto flex justify-between items-center">
           <p className="text-gray-400 text-lg font-medium">© 2025 All Rights Reserved by ShadowFox</p>
-          <Link
-            href="#"
-            className="text-purple-400 hover:text-purple-300 text-lg font-medium transition-colors duration-300"
-          >
-            LinkedIn
-          </Link>
         </div>
       </footer>
     </div>

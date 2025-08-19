@@ -108,12 +108,6 @@ export default function TestimonialsPage() {
         <div className="max-w-7xl mx-auto">
           <div className="flex justify-between items-center">
             <p className="text-gray-400 text-lg font-medium">© 2025 All Reserved By ShadowFox</p>
-            <Link
-              href="#"
-              className="text-purple-400 hover:text-purple-300 text-lg font-medium transition-colors duration-300"
-            >
-              LinkedIn
-            </Link>
           </div>
         </div>
       </footer>

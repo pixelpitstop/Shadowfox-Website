@@ -562,7 +562,7 @@ export default function InternshipsPage() {
             </div>
             <div>
               <h3 className="text-xl font-bold mb-4">Follow Us</h3>
-              <Link href="#" className="text-purple-400 hover:text-purple-300">
+              <Link href="https://www.linkedin.com/company/shadowfoxinfo/" className="text-purple-400 hover:text-purple-300">
                 LinkedIn
               </Link>
             </div>
