@@ -8,20 +8,21 @@ import Design2 from "@/Assets/Design2.png"
 import Design3 from "@/Assets/Design3.png"
 import Design4 from "@/Assets/Design4.png"
 import { Button } from "@/components/ui/button"
-import { ChevronDown, ArrowRight, Sparkles, Zap, Target } from "lucide-react"
+import { ChevronDown, ArrowRight, Sparkles, Zap, Target, Menu, X } from "lucide-react"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 
 const carouselImages = [
-   Design1,
-   Design2,
-   Design3,
-   Design4
+  Design1,
+  Design2,
+  Design3,
+  Design4
 ]
 
 export default function LandingPage() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isVisible, setIsVisible] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -45,6 +46,8 @@ export default function LandingPage() {
           >
             Shadowfox.
           </Link>
+          
+          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <Link
               href="/"
@@ -85,6 +88,78 @@ export default function LandingPage() {
             <a
               href="#contact-us"
               className="text-lg font-semibold hover:text-purple-400 transition-all duration-300 hover:scale-105"
+            >
+              Contact Us
+            </a>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden text-purple-400 hover:text-purple-300 transition-colors duration-300"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
+          </button>
+        </div>
+
+        {/* Mobile Navigation Menu */}
+        <div className={`md:hidden transition-all duration-300 ease-in-out ${
+          isMobileMenuOpen 
+            ? 'max-h-96 opacity-100' 
+            : 'max-h-0 opacity-0 overflow-hidden'
+        }`}>
+          <div className="px-6 py-4 space-y-4 bg-gray-900/95 backdrop-blur-xl border-t border-purple-500/20">
+            <Link
+              href="/"
+              className="block text-lg font-semibold hover:text-purple-400 transition-all duration-300"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Home
+            </Link>
+            
+            {/* Mobile Programs Dropdown */}
+            <div className="space-y-2">
+              <span className="block text-lg font-semibold text-purple-400">Programs</span>
+              <div className="pl-4 space-y-2">
+                <Link
+                  href="/internships"
+                  className="block text-white hover:text-purple-400 font-medium transition-colors duration-300"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Internships
+                </Link>
+                <Link
+                  href="/bootcamps"
+                  className="block text-white hover:text-purple-400 font-medium transition-colors duration-300"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Bootcamps
+                </Link>
+              </div>
+            </div>
+            
+            <Link
+              href="/testimonials"
+              className="block text-lg font-semibold hover:text-purple-400 transition-all duration-300"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Testimonials
+            </Link>
+            <a
+              href="#faqs"
+              className="block text-lg font-semibold hover:text-purple-400 transition-all duration-300"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              FAQ's
+            </a>
+            <a
+              href="#contact-us"
+              className="block text-lg font-semibold hover:text-purple-400 transition-all duration-300"
+              onClick={() => setIsMobileMenuOpen(false)}
             >
               Contact Us
             </a>
@@ -307,7 +382,7 @@ export default function LandingPage() {
       </section>
 
       {/* Enhanced FAQ Section */}
-      <section id="faqs"className="px-6 py-24 scroll-mt-32">
+      <section id="faqs" className="px-6 py-24 scroll-mt-32">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-5xl font-black mb-16 text-center">
             Frequently Asked <span className="text-purple-400">Questions.</span>
@@ -394,12 +469,11 @@ export default function LandingPage() {
                 </li>
                 <li>
                   <Link
-                  href="/verify"
-                  className="text-lg font-medium hover:text-purple-400 transition-colors duration-300"> 
-                  Verify
+                    href="/verify"
+                    className="text-lg font-medium hover:text-purple-400 transition-colors duration-300"
+                  > 
+                    Verify
                   </Link>
-                </li>
-                <li>
                 </li>
               </ul>
             </div>
@@ -419,12 +493,12 @@ export default function LandingPage() {
               <div className="space-y-3 text-gray-300">
                 <p className="text-lg font-medium">info@shadowfox.in</p>
                 <p className="text-lg font-medium">+918095778765</p>
-                <p className="text-lg font-medium">8501 3A 13th Main Road, Anna Nagar West, Chennai - 600040.</p>
+                <p className="text-lg font-medium">859J, 3A 13th Main Road, Anna Nagar West, Chennai - 600040.</p>
               </div>
             </div>
           </div>
           <div className="border-t border-purple-500/20 mt-16 pt-10 flex justify-center">
-            <p className="text-gray-400 text-lg font-medium ">© 2025 All Reserved By ShadowFox</p>
+            <p className="text-gray-400 text-lg font-medium">© 2025 All Reserved By ShadowFox</p>
           </div>
         </div>
       </footer>

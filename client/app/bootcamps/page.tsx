@@ -17,7 +17,7 @@ const bootcamps = [
     instructor: "Mr.Dhanush A",
     rating: 4.8,
     reviews: 650,
-    enabled: true,
+    enabled: false,
     tags: ["React", "Node.js", "MongoDB"],
   },
   {
@@ -30,7 +30,7 @@ const bootcamps = [
     instructor: "Ms. Kavya",
     rating: 4.9,
     reviews: 420,
-    enabled: true,
+    enabled: false,
     tags: ["Figma", "Adobe XD", "Prototyping"],
   },
   {
