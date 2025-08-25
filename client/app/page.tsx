@@ -492,7 +492,7 @@ export default function LandingPage() {
               <h3 id="contact-us" className="text-2xl font-black mb-6 text-purple-400">Contact Us</h3>
               <div className="space-y-3 text-gray-300">
                 <p className="text-lg font-medium">info@shadowfox.in</p>
-                <p className="text-lg font-medium">+918095778765</p>
+                <p className="text-lg font-medium">+918095776765</p>
                 <p className="text-lg font-medium">859J, 3A 13th Main Road, Anna Nagar West, Chennai - 600040.</p>
               </div>
             </div>
